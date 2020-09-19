@@ -7,5 +7,5 @@ class User(db.Model):
 	first = db.Column(db.String(1))
 	last = db.Column(db.String(50))
 	dob = db.Column(db.Integer)
-	phone = db.Column(db.Integer)
+	county = db.Column(db.String(50))
 	email = db.Column(db.String(50))
