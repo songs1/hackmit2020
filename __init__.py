@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 #load main config
-app.config.from_pyfile('../config.py') 
+app.config.from_pyfile('config.py') #'../config.py' if foldered
 db = SQLAlchemy(app)
 
 import my_app.views
