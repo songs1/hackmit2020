@@ -1,6 +1,6 @@
 #first, last, dob, county, phone, email
 
-from app import db
+from my_app import db
 
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
