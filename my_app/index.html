@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VoterCheck</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <!--try a new template thingy?-->
+  <link rel="stylesheet" href="../static/main.css">
+  <script src="../static/script.js"></script>
+  <script src="jquery-3.5.1.min.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+
+    <h1>VoterCheck</h1>
+    <!--info here, link to the ga website, talk about the pROBLEMS-->
+    <h3>Sign up to be notified if your voter registration changes!</h3>
+
+    <form action="/action_page.php" method="post">
+    <label for="first">First initial:</label><br>
+    <!--limit to one char, check if alpha, automatic capital-->
+    <input type="text" id="first" name="first" required><br>
+    <label for="last">Last name:</label><br>
+    <input type="text" id="last" name="last" required><br>
+    <label for="county">County</label><br>
+    <input type="text" id="county" name="county" required><br>
+    <label for="date">Date of birth:</label><br>
+    <input type="date" id="date" name="date" required><br>
+    <input type="submit" value="Submit">
+    </form>
+    
+    
+  </div>
+  <!--script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script-->
+  
+</body>
+</html>

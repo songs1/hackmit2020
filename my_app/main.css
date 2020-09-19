@@ -1,0 +1,21 @@
+h1 {
+    background-color: lightblue;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+button {
+    width: 100px;
+    height:  50px;
+}
+
+#container {
+    text-align: center;
+}
+
+
+#submit {
+    
+}
