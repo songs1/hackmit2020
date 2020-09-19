@@ -7,7 +7,7 @@ from my_app.models import User
 def index():
     db_users = User.query.all()
     users_list = [{"First Initial":u.first, "Last Name":u.last, "Date of Birth":u.dob, \
-    "County":u.county, "Phone Number":u.phone, "Email":u.email} for u in db_users]
+    "County":u.county, "Email":u.email} for u in db_users]
 
     return render_template("index.html", users = users_list)
     
@@ -17,7 +17,7 @@ def add_user():
 	if request.method == "POST":
 		info = request.get_json()
 		new_user = User(first=info['first'], last=info['last'], dob=info['dob'], \
-		county=info['county'], phone=info['phone'], email=info['email']
+		county=info['county'], email=info['email']
 		db.session.add(new_user)
 		db.session.commit()
 	return redirect("/")
