@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VoterCheck</title>
+  <title>VoterAlertGA</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
   <!--try a new template thingy?-->
   <link rel="stylesheet" href="../static/main.css">
@@ -13,28 +13,30 @@
 <body>
   <div id="container">
 
-    <h1>VoterCheck</h1>
+    <img src="https://cdn.discordapp.com/attachments/740332583954546709/757218789157896202/voter_alert_banner.png" alt="VoterAlertGA">
     <!--info here, link to the ga website, talk about the pROBLEMS-->
     <h3>Sign up to be notified if your voter registration changes!</h3>
 
-    <form id="voter-form">
+    <form id="voter-form" action="/form-submit.html">
     <label for="first">First initial:</label><br>
     <!--limit to one char, check if alpha, automatic capital-->
-    <input type="text" id="first" name="first" required><br>
+    <input type="text" id="first" name="first" maxlength="1" required><br>
     <label for="last">Last name:</label><br>
     <input type="text" id="last" name="last" required><br>
-    <label for="county">County</label><br>
+    <label for="county">County:</label><br>
     <input type="text" id="county" name="county" required><br>
     <label for="dob">Date of birth:</label><br>
-    <input type="date" id="dob" name="dob" required><br>
+    <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required><br>
 	<label for="email">Email address:</label><br> 
 	<input type="email" id="email" name="email" required><br>
-    
-	<button id="info">Submit</button>
+	<br><button id="info" class="ui button">Submit</button>
     
 	</form>
-    
-    
+	<p></p>
+	{% for v in views_out %}
+    <p>Registration found for {{v.first}}. {{v['last']}}</p>
+    {% endfor %}
 	</div>
+	
 </body>
 </html>

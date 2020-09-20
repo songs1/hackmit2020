@@ -16,10 +16,6 @@ def check_status(first_initial, last_name, county, DOB):
 
     wait = .1 #in sec
     url = "https://www.mvp.sos.ga.gov/"
-    '''first_initial = "H"
-    last_name = "CHOI"
-    county = "FULTON"
-    DOB = "09122000"'''
     
     driver = webdriver.Chrome(executable_path='C:\\Users\\chenv\\git\\hackmit2020\\my_app\\chromedriver.exe') #set up webdriver
     driver.get(url) #go to url

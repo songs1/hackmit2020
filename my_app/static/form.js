@@ -20,10 +20,10 @@ $(document).ready(function(){
         	contentType: "application/json; charset=UTF-8",
         	success: function(foundAcct) {
         		if (foundAcct === "yes") {
-					console.log("yes")
+					window.location.href = "/form-submit"
 				}
 				if (foundAcct === "no") {
-					console.log("no")
+					alert("Oops! We couldn't find your registration.\nPlease make sure you've filled out the form correctly and your registration information can be found at mvp.sos.ga.gov.")
 				}
         	}
         });
