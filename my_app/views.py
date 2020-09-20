@@ -18,17 +18,25 @@ def index():
 def add_user():
     if request.method == "POST":
         info = request.get_json()
-        statusGood = check_status.check_status(first_initial=info['first'], last_name=info['last'], DOB=info['dob'], county=info['county'])
+        statusGood = False
+        if info['first']!= "" and info['last']!= "" and info['dob']!="" and info['county']!="":
+            statusGood = check_status.check_status(first_initial=info['first'], last_name=info['last'], DOB=info['dob'], county=info['county'])
         
         if statusGood:
-            new_user = User(first=info['first'], last=info['last'], dob=info['dob'], county=info['county'], email=info['email'], status=info['status'])
+            new_user = User(first=info['first'], last=info['last'], dob=info['dob'], county=info['county'], email=info['email'])
             db.session.add(new_user)
             db.session.commit()
-            #return redirect("/")
-        #else:
-        return redirect("/")
+            return "yes"
+        else:
+            return "no"
 
+@app.route("/form-submit")
+def form_submit():
     
+    db_users = User.query.all()
+    users_list = [{"first":u.first, "last":u.last, "dob":u.dob, "county":u.county, "email":u.email} for u in db_users]
+
+    return render_template("form-submit.html", views_out=users_list)
 
     
 
