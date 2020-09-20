@@ -8,6 +8,7 @@ def index():
     """db_users = User.query.all()
     users_list = [{"First Initial":u.first, "Last Name":u.last, "Date of Birth":u.dob, "County":u.county, "Email":u.email} for u in db_users]"""
 
+
     return render_template("index.html",)
     
 
@@ -30,3 +31,4 @@ def add_user():
 """@app.route('/submitted', methods=['POST'])
 def submitted():
     return render_template('submitted.html', say=request.form['say'], to=request.form['to'])"""
+
