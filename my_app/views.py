@@ -21,7 +21,7 @@ def add_user():
         statusGood = check_status.check_status(first_initial=info['first'], last_name=info['last'], DOB=info['dob'], county=info['county'])
         
         if statusGood:
-            new_user = User(first=info['first'], last=info['last'], dob=info['dob'], county=info['county'], email=info['email'])
+            new_user = User(first=info['first'], last=info['last'], dob=info['dob'], county=info['county'], email=info['email'], status=info['status'])
             db.session.add(new_user)
             db.session.commit()
             #return redirect("/")

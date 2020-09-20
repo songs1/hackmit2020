@@ -9,3 +9,4 @@ class User(db.Model):
     county = db.Column(db.String(50))
     dob = db.Column(db.Integer)
     email = db.Column(db.String(50))
+    status = db.Column(db.String(20))
