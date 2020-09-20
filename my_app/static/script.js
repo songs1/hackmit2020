@@ -1,15 +1,18 @@
 $(document).ready(function(){
-    $("#post-button").click(function(){
-        const url = "http://localhost:5000/post";
-        const postInfo = {
-        	title: $('#title').val(),
-        	description: $('#description').val(),
+    $("#info").click(function(){
+        const url = "http://localhost:5000/add_user";
+        const info = {
+        	first: $('#first').val(),
+        	last: $('#last').val(),
+			dob: $('#dob').val(),
+			county: $('#county').val(),
+			email: $('#email').val(),
         };
 
         $s.ajax({
         	url: url,
         	type: "POST",
-        	data: JSON.stringify(postInfo),
+        	data: JSON.stringify(info),
         	processData: false,
         	contentType: "application/json; charset=UTF-8",
         	complete: function() {
