@@ -1,11 +1,12 @@
 $(document).ready(function(){
     $("#info").click(function(){
+		console.log("clicked");
         const url = "http://localhost:5000/add_user";
         const info = {
         	first: $('#first').val(),
         	last: $('#last').val(),
-			dob: $('#dob').val(),
 			county: $('#county').val(),
+			dob: $('#dob').val(),
 			email: $('#email').val(),
         };
 
