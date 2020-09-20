@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Sep 20 01:41:11 2020
-
-@author: Samuel
 """
+
 #from my_app.models import User
 #from my_app.views import user_list
-#from ANGIE import check_status
+#from check_status import check_status
 #from voter_email import email_update
 #get_status = lambda u: check_status(u.first, u.last, u.county, u.dob)
 #email = lambda u, status: email_update(u.first, u.last, u.email, status) 
@@ -49,6 +48,7 @@ def roster_sweep(user_list):
             'activated':activated, 'error':error} 
 
 #Example
+'''
 class User():
     def __init__(self, uid, first, last, county, dob, email, status):
         self.uid, self.first, self.last, self.county, = uid, first, last, county
@@ -83,3 +83,4 @@ email = lambda u, status: print(f'hi {u.first}. {u.last}, (email: {u.email}), \
 print(roster_sweep([stay_active, active_to_inactive, active_to_invalid,
                     stay_inactive, inactive_to_active, inactive_to_invalid,
                     stay_invalid, invalid_to_active, invalid_to_inactive]))
+'''
